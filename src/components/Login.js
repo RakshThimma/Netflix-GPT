@@ -90,7 +90,7 @@ dispatch(addUser({ uid, email, displayName, photoURL }));
       <Header />
       <div>
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/e8a8e44f-ffcf-490c-ad60-b7febe7736d0/web/IN-en-20250407-TRIFECTA-perspective_0d56dee1-00dd-4425-af41-40aee72b1038_large.jpg"
+          src={BG_IMAGE_URL}
           alt=""
         />
       </div>

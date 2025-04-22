@@ -8,3 +8,14 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;            /* Chrome, Safari */
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  

@@ -5,18 +5,32 @@ import useNowTrendingMovies from "../Hooks/useNowTrendingMovies";
 import useUpcomingMovies from "../Hooks/useUpcomingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryConatiner from "./SecondaryConatiner";
+import { useSelector } from "react-redux";
+import GptSearch from "./GptSearch";
+
+
 
 const Browse = () => {
-   useNowPlayingMovies();
-   usePopularMovies();
-   useNowTrendingMovies();
-   useUpcomingMovies();
+  useNowPlayingMovies();
+  usePopularMovies();
+  useNowTrendingMovies();
+  useUpcomingMovies();
+
+  const GptSearchToggle = useSelector((store) => store.gpt.showGptSearch);
 
   return (
-    <div>
+    <div className="w-full  bg-black">
       <Header />
-      <MainContainer/>
-      <SecondaryConatiner/>
+      <div className="overflow-y-auto hide-scrollbar">
+        {GptSearchToggle ? (
+          <GptSearch />
+        ) : (
+          <>
+            <MainContainer />
+            <SecondaryConatiner />
+          </>
+        )}
+      </div>
     </div>
   );
 };
