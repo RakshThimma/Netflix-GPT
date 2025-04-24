@@ -28,7 +28,7 @@ const Browse = () => {
   }, [GptSearchToggle, dispatch]);
 
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <Header />
       <div className="overflow-y-auto hide-scrollbar">
         {GptSearchToggle ? (

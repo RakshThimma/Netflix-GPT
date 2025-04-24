@@ -65,15 +65,15 @@ const Header = () => {
     });
   }, []);
   return (
-    <div className={`fixed top-0 w-full bg-gradient-to-b z-50 from-black via-transparent px-10 py-2 flex justify-between items-center ${isScrolled ? 'bg-black' : 'bg-transparent'}`}>
+    <div className="fixed top-0 w-full bg-gradient-to-b z-50 from-black via-transparent  px-10 py-2 flex justify-between items-center flex-col md:flex-row ">
       <img
-        className="w-48"
+        className="w-48 mx-auto md:mx-0"
         src={LOGO}
         alt="Netflix Logo"
       />
 
       {user && (
-        <div className="flex p-2  items-center gap-3">
+        <div className="flex p-2  items-center gap-3 text-xs md:text-base">
           {GptSearchToggle && <select className="px-2 py-2 m-2 text-white bg-black w-24 border-black" onChange={handleLangChange}>
             {
               SelectLang.map((lang) => {
@@ -83,7 +83,7 @@ const Header = () => {
             
           </select>}
           <button className="bg-purple-800 text-white rounded-lg px-4 py-2 " onClick={handleSearchToggle}>{ GptSearchToggle ? "Home Page" :"GPT Search"}</button>
-          <img className="w-12 rounded-full" src={user?.photoURL} alt="User" />
+          <img className="w-12 rounded-full hidden md:block" src={user?.photoURL} alt="User" />
           <button
             onClick={handleSignOut}
             className="p-2 text-white border border-red-500 bg-red-500 rounded"

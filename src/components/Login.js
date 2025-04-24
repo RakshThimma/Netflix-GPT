@@ -92,11 +92,12 @@ dispatch(addUser({ uid, email, displayName, photoURL }));
       <div>
         <img
           src={BG_IMAGE_URL}
+          className="h-screen object-cover md:w-full"
           alt=""
         />
       </div>
-      <div className="absolute top-1/5 left-1/3 w-3/12 p-5 m-2 border border-solid rounded-md bg-black/80">
-        <h3 className="text-white px-2 m-2 text-3xl font-bold">
+      <div className="absolute top-1/5 left-15 md:left-1/3 w-3/4 md:w-3/12 p-5 m-2 border border-solid rounded-md bg-black/80">
+        <h3 className="text-white px-2 m-2 text-lg md:text-3xl font-bold ">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h3>
         <form onSubmit={(e) => e.preventDefault()} className="text-center">
