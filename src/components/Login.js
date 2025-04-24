@@ -12,6 +12,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { PHOTO_URL } from "../utils/constants";
+import { BG_IMAGE_URL } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();

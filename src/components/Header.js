@@ -8,10 +8,21 @@ import { LOGO } from "../utils/constants";
 import {toggleShowGptSearch} from "../utils/GptSlice";
 import { SelectLang } from "../utils/langConstants";
 import { ChangeLang } from "../utils/configSlice";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const user = useSelector((store) => store.user);
   const GptSearchToggle = useSelector((store) => store.gpt.showGptSearch);
   const handleLangChange = (e) => {
@@ -20,6 +31,7 @@ const Header = () => {
   }
   const handleSearchToggle = () => {
     dispatch(toggleShowGptSearch())
+    
   }
   const handleSignOut = () => {
     signOut(auth)
@@ -53,7 +65,7 @@ const Header = () => {
     });
   }, []);
   return (
-    <div className="absolute w-full bg-gradient-to-b z-25 from-black via-transparent px-10 py-2 flex justify-between items-center">
+    <div className={`fixed top-0 w-full bg-gradient-to-b z-50 from-black via-transparent px-10 py-2 flex justify-between items-center ${isScrolled ? 'bg-black' : 'bg-transparent'}`}>
       <img
         className="w-48"
         src={LOGO}

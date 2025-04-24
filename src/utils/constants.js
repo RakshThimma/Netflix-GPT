@@ -11,10 +11,14 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYzkyN2UxNWRjZWJmNmZmNmE4ZmZiNzljY2JmYmJmZSIsIm5iZiI6MTc0NDM2NzU0MS40ODUsInN1YiI6IjY3ZjhlZmI1ZDNhYjdkN2E4YmFkOGQ1MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OIj40--jRnlgWZLpNIyMfcXRq6czgNLV2S3JorPwQJ4",
+      "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
 export const IMAGE_CDN_URL ="https://image.tmdb.org/t/p/w300/";
 
 export const BG_IMAGE_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/e8a8e44f-ffcf-490c-ad60-b7febe7736d0/web/IN-en-20250407-TRIFECTA-perspective_0d56dee1-00dd-4425-af41-40aee72b1038_large.jpg";
+
+
+
+export const GEMINI_API_KEY = process.env.REACT_APP_GOOGLE_GENAI_API_KEY;
