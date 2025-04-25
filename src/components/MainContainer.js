@@ -5,7 +5,7 @@ import VideoBackGround from './VideoBackGround'
 
 const MainContainer = () => {
     const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-    if(!movies && movies.length === 0) return <div>Loading....</div>; //befr movies get updated 
+    if(!movies || movies.length === 0) return <div>Loading....</div>; //befr movies get updated 
     const mainMovie = movies[0]
     // console.log(mainMovie)
     const {original_title, overview, id} = mainMovie;
