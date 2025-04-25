@@ -18,7 +18,9 @@ const useNowPlayingMovies = () => {
     dispatch(addNowPlayingMovies(json.results));
   };
   useEffect(() => {
-    !nowPlayingMovies && handleApI();
+    if (!nowPlayingMovies || nowPlayingMovies.length === 0) {
+      handleApI();
+    }
   }, []);
   
 };
