@@ -15,11 +15,17 @@ const useGetMovieVideo = (movie_id) => {
     );
     const json = await data.json();
 
-    const trailerVideos = json.results.filter(
-      (video) => video.type === "Trailer"
-    );
-    trailer = trailerVideos.length > 0 ? trailerVideos[0] : json.results[0];
-    dispatch(addTrailerVideo(trailer));
+    if (json.results && Array.isArray(json.results) && json.results.length > 0) {
+      const trailerVideos = json.results.filter(
+        (video) => video.type === "Trailer"
+      );
+    
+      const trailer = trailerVideos.length > 0
+        ? trailerVideos[0]
+        : json.results[0];
+    
+      dispatch(addTrailerVideo(trailer));
+    }
   };
 
   useEffect(() => {
