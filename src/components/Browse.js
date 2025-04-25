@@ -34,10 +34,10 @@ const Browse = () => {
         {GptSearchToggle ? (
           <GptSearch />
         ) : (
-          <>
+          <div className="bg-black">
             <MainContainer />
             <SecondaryConatiner />
-          </>
+          </div>
         )}
       </div>
     </div>

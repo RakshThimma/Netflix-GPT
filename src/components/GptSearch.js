@@ -13,7 +13,7 @@ const GptSearch = () => {
         <GptMovieSuggestions />
       </div>
       <div className="-z-20 overflow-hidden fixed top-0 left-0 w-full">
-        <img src={BG_IMAGE_URL} className="h-screen md:h-screen w-screen" alt="" />
+        <img src={BG_IMAGE_URL} className="h-screen object-cover md:h-screen w-screen" alt="" />
       </div>
     </div>
   );
